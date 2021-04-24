@@ -6,6 +6,7 @@ using UnityEngine;
 public class GroundScript : MonoBehaviour
 {
 	Player player;
+	//PlayerShoot player;
 	public Texture2D baseTexture;
 	Texture2D cloneTexture;
 	SpriteRenderer sr;
@@ -59,6 +60,7 @@ public class GroundScript : MonoBehaviour
 	void Start ()
 	{
 		player = FindObjectOfType<Player>();
+		//player = FindObjectOfType<PlayerShoot>();
 		sr = GetComponent<SpriteRenderer>();
 		cloneTexture = Instantiate(baseTexture);
 		cloneTexture.alphaIsTransparency = true;
@@ -73,9 +75,10 @@ public class GroundScript : MonoBehaviour
 
 	}
 
-	void MakeAHole(CircleCollider2D col)
+	void Drill(Collider2D col)
 	{
 	   // print(string.Format("{0},{1},{2},{3}", WidthPixel, HeightPixel, WidthWorld, heightWorld));
+	   //TODO optimize This
 
 		Vector2Int c = World2Pixel(col.bounds.center);
 		int r = Mathf.RoundToInt(col.bounds.size.x * WidthPixel / WidthWorld);
@@ -97,11 +100,17 @@ public class GroundScript : MonoBehaviour
 				cloneTexture.SetPixel(nx, ny, Color.clear);
 			}
 		}
-		cloneTexture.Apply();
-		UpdateTexture();
 
+		cloneTexture.Apply();
+		//TODO removing this seems tripple performance with no consequences
+		//UpdateTexture();
 		Destroy(gameObject.GetComponent<PolygonCollider2D>());
 		gameObject.AddComponent<PolygonCollider2D>();
+		
+
+
+		StartCoroutine("RebuildCollider");
+		
 	}
 
 	void UpdateTexture()
@@ -131,10 +140,10 @@ public class GroundScript : MonoBehaviour
 
 		if (!collision.CompareTag("Explosion"))
 			return;
-		if (!collision.GetComponent<CircleCollider2D>())
+		if (!collision.GetComponent<Collider2D>())
 			return;
 
-		MakeAHole(collision.GetComponent<CircleCollider2D>());
+		Drill(collision.GetComponent<Collider2D>());
 		Destroy(collision.gameObject, drillTime);
 		StartCoroutine("ResetCanThrow");
 		
@@ -151,5 +160,12 @@ public class GroundScript : MonoBehaviour
 	{
 		//TODO THIS IS HORRIBLE BUT IM TIRED
 		StopCoroutine("ResetCanThrow");
+	}
+
+	IEnumerator RebuildCollider()
+
+    {
+		yield return new WaitForSeconds(drillTime);
+	
 	}
 }

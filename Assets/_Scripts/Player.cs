@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
             //StartCoroutine("ResetCanThrow");
             ThrowBomb();
         }
-        
+
     }
 
     void Aim()
@@ -52,7 +52,7 @@ public class Player : MonoBehaviour
 
     private void ThrowBomb()
     {
-        
+
         GameObject go = Instantiate(Bomb, throwPoint.transform.position, Quaternion.identity);
         go.GetComponent<Rigidbody2D>().AddForce(throwPoint.transform.right * throwForce);
         //Destroy(go, drillTime);
