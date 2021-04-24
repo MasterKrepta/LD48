@@ -152,6 +152,12 @@
         "com.unity.modules.imgui": "1.0.0"
       }
     },
+    "com.vladfaust.unitywakatime": {
+      "version": "file:com.vladfaust.unitywakatime",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.unity.modules.ai": {
       "version": "1.0.0",
       "depth": 0,
