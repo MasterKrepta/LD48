@@ -30,9 +30,9 @@ public class Player : MonoBehaviour
         {
             rb.AddForce(transform.up * jumpForce);
         }
-        if (Input.GetKeyDown(KeyCode.G) && CanThrow)
+        if (Input.GetKeyDown(KeyCode.G) /*&& CanThrow*/)
         {
-            gs.StopReset(); //TODO HORRIBLE
+            //gs.StopReset(); //TODO HORRIBLE
 
             CanThrow = false; // This is for performance reasons
             //StartCoroutine("ResetCanThrow");
