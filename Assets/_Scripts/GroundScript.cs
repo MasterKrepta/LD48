@@ -9,6 +9,7 @@ public class GroundScript : MonoBehaviour
 	public Texture2D baseTexture;
 	Texture2D cloneTexture;
 	SpriteRenderer sr;
+	[SerializeField] float drillTime = 0.3f;
 
 	float widthWorld, heightWorld;
 	int widthPixel, heightPixel;
@@ -134,8 +135,21 @@ public class GroundScript : MonoBehaviour
 			return;
 
 		MakeAHole(collision.GetComponent<CircleCollider2D>());
-		Destroy(collision.gameObject, 0.3f);
-		player.CanThrow = true;
+		Destroy(collision.gameObject, drillTime);
+		StartCoroutine("ResetCanThrow");
+		
+		
 	}
 
+	IEnumerator ResetCanThrow()
+	{
+		yield return new WaitForSeconds(drillTime + 0.5f);
+			player.CanThrow = true;
+	}
+
+	public void StopReset()
+	{
+		//TODO THIS IS HORRIBLE BUT IM TIRED
+		StopCoroutine("ResetCanThrow");
+	}
 }
