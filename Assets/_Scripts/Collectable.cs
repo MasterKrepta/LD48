@@ -5,6 +5,11 @@ using UnityEngine;
 public class Collectable : MonoBehaviour
 {
 
+    private void Awake()
+    {
+        Game.NumTrapped++;
+    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -17,5 +22,7 @@ public class Collectable : MonoBehaviour
     private void OnDestroy()
     {
         print("Miner has been resuced");
+        Game.NumTrapped--;
+        Game.NumRescued++;
     }
 }

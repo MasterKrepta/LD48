@@ -42,6 +42,8 @@ public class Drillable : MonoBehaviour
 
     public void DrillHole(Vector3 drillLoc, float radius)
     {
+        //todo DEBUG THIS if there is time
+
         for (int x = -(int)radius; x < radius; x++)
         {
             for (int y = -(int)radius; y < radius; y++)

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: drilledTile
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -8032877890607903752, guid: e2f1447d0ecfc7543b6f3e961725faf7, type: 3}
+  m_Sprite: {fileID: 8920773036263868936, guid: 888c4f20d155b8a4c9b5105649c7eca8, type: 3}
   m_Color: {r: 0.6037736, g: 0.5838377, b: 0.5838377, a: 1}
   m_Transform:
     e00: 1

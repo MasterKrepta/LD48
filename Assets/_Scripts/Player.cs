@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
         Aim();
 
         transform.position += movement * Time.deltaTime * speed;
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButton("Jump"))
         {
             rb.AddForce(transform.up * jumpForce);
         }
