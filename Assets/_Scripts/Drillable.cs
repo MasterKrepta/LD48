@@ -59,8 +59,13 @@ public class Drillable : MonoBehaviour
 
     private void DestroyTile(Vector3Int tilePos)
     {
+        if (map.GetTile(tilePos) != null)
+        {
+            destoryedMap.SetTile(tilePos, drilledTile);
+        }
         map.SetTile(tilePos, null);
-        destoryedMap.SetTile(tilePos, drilledTile);
+        
+        
     }
 
     
