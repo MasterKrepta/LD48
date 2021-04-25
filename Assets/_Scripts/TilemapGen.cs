@@ -19,13 +19,13 @@ public class TilemapGen : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            GenerateMap();
-        }
-    }
+    //void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Q))
+    //    {
+    //        GenerateMap();
+    //    }
+    //}
 
     void GenerateMap()
     {
