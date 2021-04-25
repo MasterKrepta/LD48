@@ -8,6 +8,7 @@ public class Collectable : MonoBehaviour
     private void Awake()
     {
         Game.NumTrapped++;
+        GetComponentInChildren<HoleMaker>().enabled = false;
     }
 
 

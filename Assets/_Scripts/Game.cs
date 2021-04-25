@@ -58,6 +58,7 @@ public  class Game : MonoBehaviour
     
     static void UpdateUI()
     {
+     
         if (txtRescued != null && txtTrapped != null)
         {
             txtTrapped.text = $"Miners Trapped: {_numTrapped}";
