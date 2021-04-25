@@ -11,7 +11,7 @@ public class TilemapGen : MonoBehaviour
     [SerializeField] RuleTile tile;
     public int mapWidth, mapHeight;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         myTileMap = GetComponentInChildren<Tilemap>();
         GenerateMap();

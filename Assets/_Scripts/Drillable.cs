@@ -6,8 +6,9 @@ using UnityEngine.Tilemaps;
 
 public class Drillable : MonoBehaviour
 {
-    Tilemap map;
-    
+    Tilemap map; 
+    public Tilemap destoryedMap;
+    public Tile drilledTile;
 
     private void Start()
     {
@@ -34,6 +35,7 @@ public class Drillable : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Explosion"))
         {
+            
             DrillHole(collision.gameObject.transform.position, 1.5f);
         }
     }
@@ -56,6 +58,7 @@ public class Drillable : MonoBehaviour
     private void DestroyTile(Vector3Int tilePos)
     {
         map.SetTile(tilePos, null);
+        destoryedMap.SetTile(tilePos, drilledTile);
     }
 
     

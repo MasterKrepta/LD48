@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4165553802267543437}
   - component: {fileID: 4165553802267543436}
-  - component: {fileID: 4165553802267543443}
   - component: {fileID: 4165553802267543438}
   - component: {fileID: -2193199026303449415}
+  - component: {fileID: 1559369201542078687}
   m_Layer: 0
   m_Name: Drill
   m_TagString: Explosion
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4165553802267543442}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 4.01, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 707579982e8e2e1439297c2384fc7d97, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3cccdd340202af646a6fc200ddb72e55, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -85,22 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &4165553802267543443
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4165553802267543442}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.25
 --- !u!50 &4165553802267543438
 Rigidbody2D:
   serializedVersion: 4
@@ -134,3 +118,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0d16030b8d056d4d914316e31576e16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!60 &1559369201542078687
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4165553802267543442}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.64, y: 0.64}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.099999994, y: 0.22999999}
+      - {x: -0.17999999, y: 0.29}
+      - {x: -0.32, y: 0.29}
+      - {x: -0.32, y: -0.26999998}
+      - {x: -0.19, y: -0.26999998}
+      - {x: 0.28, y: -0.089999996}
+      - {x: 0.32, y: -0.07}
+      - {x: 0.32, y: 0.14999999}

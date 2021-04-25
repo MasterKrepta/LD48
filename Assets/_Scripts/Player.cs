@@ -53,7 +53,7 @@ public class Player : MonoBehaviour
     private void ThrowBomb()
     {
 
-        GameObject go = Instantiate(Bomb, throwPoint.transform.position, Quaternion.identity);
+        GameObject go = Instantiate(Bomb, throwPoint.transform.position, throwPoint.transform.rotation);
         go.GetComponent<Rigidbody2D>().AddForce(throwPoint.transform.right * throwForce);
         //Destroy(go, drillTime);
     }
